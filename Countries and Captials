@@ -1,0 +1,112 @@
+# Dictionary of countries and capitals
+capitals = {
+    "USA": "Washington D.C.",
+    "China": "Beijing",
+    "Russia": "Moscow",
+    "India": "New Delhi"
+}
+
+
+# Part 1 – Checking Dictionary
+
+# Check if India exists in the dictionary
+if "India" in capitals:
+    print("India exists in the dictionary.")
+else:
+    print("India does not exist.")
+
+# Check if Brazil exists
+if "Brazil" in capitals:
+    print("Brazil exists in the dictionary.")
+else:
+    print("Brazil does not exist")
+
+# Using .get() method
+capital = capitals.get("Brazil")
+
+if capital:
+    print(f"The capital is {capital}")
+else:
+    print("That capital doesn't exist")
+
+# Part 3 – Updating the Dictionary
+
+# Existing updates
+capitals.update({"Germany": "Berlin"})
+capitals.update({"USA": "Detroit"})
+
+# Add new countries and capitals
+capitals.update({"France": "Paris"})
+capitals.update({"Japan": "Tokyo"})
+capitals.update({"Canada": "Ottawa"})
+
+# Update USA capital again
+capitals.update({"USA": "Washington D.C."})
+
+# Print dictionary
+print("\nDictionary after updates:")
+print(capitals)
+
+# Part 4 – Removing Elements
+
+# Remove China
+capitals.pop("China")
+
+# Remove last item added
+capitals.popitem()
+
+# Remove Russia
+capitals.pop("Russia")
+
+print("\nDictionary after removals:")
+print(capitals)
+
+
+
+# Part 5 – Iterating Through Dictionary
+
+# Task A – Print Countries
+print("\nCountries:")
+for key in capitals.keys():
+    print(f"Country: {key}")
+
+# Task B – Print Capitals
+print("\nCapitals:")
+for value in capitals.values():
+    print(value)
+
+# Task C – Print Both
+print("\nCountries and Capitals:")
+for key, value in capitals.items():
+    print(f"{key} : {value}")
+
+
+# Part 6 – Mini Challenge
+
+countries = {
+    "France": "Paris",
+    "Japan": "Tokyo",
+    "Canada": "Ottawa",
+    "USA": "Washington D.C.",
+    "Brazil": "Brasilia",
+    "Italy": "Rome"
+}
+
+country = input("\nEnter a country name: ")
+
+capital = countries.get(country)
+
+if capital:
+    print(f"The capital of {country} is {capital}")
+else:
+    print("Sorry, that country is not in the dictionary.")
+
+    answer = input("Would you like to add it? (yes/no) ")
+
+    if answer == "yes":
+        new_capital = input("Enter the capital city: ")
+        countries.update({country: new_capital})
+        print("Country added successfully.")
+
+print("\nUpdated dictionary:")
+print(countries)
